@@ -15,9 +15,9 @@ namespace Microsoft.Azure.Kinect.BodyTracking
         /// Initializes a new instance of the <see cref="BodyTracker"/> class.
         /// </summary>
         /// <param name="calibration"></param>
-        public BodyTracker(Calibration calibration)
+        public BodyTracker(Calibration calibration, TrackerConfiguration configuration)
         {
-            AzureKinectException.ThrowIfNotSuccess(() => NativeMethods.k4abt_tracker_create(ref calibration, out this.handle));
+            AzureKinectException.ThrowIfNotSuccess(() => NativeMethods.k4abt_tracker_create(ref calibration, ref configuration, out this.handle));
 
             // Hook the native allocator and register this object.
             // .Dispose() will be called on this object when the allocator is shut down.

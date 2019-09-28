@@ -627,7 +627,7 @@ namespace Microsoft.Azure.Kinect.Sensor
 
         [DllImport("k4abt", CallingConvention = CallingConvention.Cdecl)]
         [NativeReference]
-        public static extern k4a_result_t k4abt_tracker_create([In] ref Calibration sensor_calibration, out k4abt_tracker_t tracker_handle);
+        public static extern k4a_result_t k4abt_tracker_create([In] ref Calibration sensor_calibration, [In] ref TrackerConfiguration tracker_configuration, out k4abt_tracker_t tracker_handle);
 
         [DllImport("k4abt", CallingConvention = CallingConvention.Cdecl)]
         [NativeReference]
